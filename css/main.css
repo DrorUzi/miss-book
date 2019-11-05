@@ -1,0 +1,457 @@
+@import './home-page.css';
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: openSans;
+    src: url('/font/OpenSansCondensed-Light.ttf');
+}
+
+body {
+    margin: 0;
+    background-image: url('../img/bcg3.jpg');
+    font-family: openSans;
+}
+
+h5 {
+    margin: 5px;
+}
+
+h3 {
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.main-header {
+    font-size: 4rem;
+}
+
+.main-container {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+
+.book-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.book-header {
+    text-transform: capitalize;
+    border-bottom: 1px solid lightcoral;
+}
+
+.book-preview {
+    border: 1px solid lightcoral;
+    display: flex;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    justify-content: center;
+    transition: 0.3s all;
+}
+
+.link a {
+    width: 25%;
+}
+
+.book-preview:hover {
+    transform: scale(1.1)
+}
+
+.book-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.book-img {
+    max-width: 80%;
+}
+
+/* filter */
+
+.book-filter-container {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    padding: 15px;
+    width: 80%;
+    border-bottom: 1px solid lightcoral;
+    margin: 10px;
+    font-size: 2rem;
+}
+
+input[type=text] {
+    border: none;
+    border-bottom: 2px solid lightcoral;
+    margin: 10px;
+    background-color: rgba(255, 255, 255, 0);
+    margin-top: 0;
+    padding: 10px;
+    font-size: 0.7em;
+    outline: none;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 40%;
+    height: 3px;
+    background: rgb(240, 128, 128);
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    margin-top: 30px
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 0.5rem;
+    height: 25px;
+    background: rgba(252, 187, 187, 0.972);
+    cursor: pointer;
+}
+
+.form {
+    display: flex;
+    align-items: end;
+}
+
+.form-btn {
+    margin: 15px 10px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid lightcoral;
+    border-radius: 10px;
+    width: 8rem;
+    color: black;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.form-btn:hover {
+    background-color: rgb(255, 167, 167);
+}
+
+.price {
+    margin-top: 8px;
+    margin-left: 10px;
+}
+
+.sort-price {
+    width: 13rem;
+    padding: 5px;
+    padding-bottom: 25px;
+}
+
+/* details */
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
+
+.hidden {
+    display: none;
+}
+
+.book-details {
+    background-color: rgb(255, 182, 182);
+    width: 100%;
+    padding: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1.4em;
+    flex-wrap: wrap;
+}
+
+.back-btn {
+    display: flex;
+    border-radius: 10px;
+    background-color: rgb(255, 220, 220);
+    border: 1px solid lightcoral;
+    padding: 10px;
+    font-size: 1.2rem;
+    color: black;
+    height: 3rem;
+    align-self: center;
+    margin: 20px;
+}
+
+.back-btn:hover {
+    background-color: rgb(255, 175, 175)
+}
+
+.details {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    flex-direction: column;
+}
+
+.sale-icon {
+    width: 4rem;
+}
+
+.book-title {
+    width: 90%;
+    border-bottom: 2px solid lightcoral;
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+
+ul {
+    width: 40%;
+    padding: 0;
+}
+
+.details-header {
+    list-style: none;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.details-second {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    flex-direction: column;
+}
+
+.new-text {
+    margin-bottom: 20px;
+}
+
+.read-btn {
+    margin: 15px 10px;
+    background-color: rgb(255, 220, 220);
+    border: 1px solid lightcoral;
+    border-radius: 10px;
+    width: 8rem;
+    color: black;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+}
+
+.read-btn:hover {
+    background-color: rgb(255, 175, 175)
+}
+
+/* main-header */
+
+.home-main-header {
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid lightcoral;
+    padding-right: 50px;
+    padding-left: 50px;
+}
+
+.nav-bar {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+}
+
+.router-link-active {
+    color: lightcoral;
+}
+
+.footer {
+    height: 5rem;
+    border-top: 1px solid lightcoral;
+    display: flex;
+    text-align: center;
+    padding: 20px;
+    justify-content: center;
+    font-size: 1.5rem
+}
+
+.footer p {
+    margin: 0;
+}
+
+.reviews-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.review-header {
+    border-bottom: 1px solid lightcoral;
+    width: 4rem;
+}
+
+.list-container {
+    display: flex;
+}
+
+li {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+}
+
+.reviews {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    flex-direction: row;
+    height: 50%;
+    flex-wrap: wrap;
+}
+
+.add-review {
+    display: flex;
+    height: 80vh;
+    flex-direction: column;
+}
+
+.form-review{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-around;
+    padding: 40px;
+    font-size: 1.7rem;
+    width: 40%;
+}
+input[type=text].input-name{
+    margin: 0;
+}
+.select-rate{
+    display: flex;
+    -webkit-appearance: none;
+    border:1px solid lightcoral;
+    background-color: rgba(255, 255, 255, 0);
+    font-size: 1rem;
+    padding:10px;
+    cursor: pointer;
+    outline: none;
+    border-radius: 10px;
+}
+.input-date{
+    display: flex;
+    -webkit-appearance: none;
+    border:1px solid lightcoral;
+    background-color: rgba(255, 255, 255, 0);
+    font-size: 1.5rem;
+    padding:10px;
+    cursor: pointer;
+    outline: none;
+    border-radius: 10px;
+}
+.input-text{
+    display: flex;
+    -webkit-appearance: none;
+    border:1px solid lightcoral;
+    background-color: rgba(255, 255, 255, 0);
+    font-size: 1.5rem;
+    padding:10px;
+    outline: none;
+    border-radius: 10px;
+}
+.add-btn{
+    margin: 15px 10px;
+    background-color: rgb(250, 160, 160);
+    border: 1px solid lightcoral;
+    border-radius: 10px;
+    width: 8rem;
+    color: black;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+.add-btn:hover{
+    background-color: rgb(253, 211, 211);
+}
+.delete-btn{
+    margin-top: 10px ;
+    background-color: rgb(255, 220, 220);
+    border: 1px solid lightcoral;
+    border-radius: 10px;
+    width: 5rem;
+    color: black;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    height: 2rem;
+}
+.delete-btn:hover{
+    background-color: rgb(253, 211, 211);
+}
+.user-msg{
+    background-color: rgb(255, 211, 211);
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size:3rem
+}
+.user-msg button {
+    margin-top: 10px ;
+    background-color: rgb(255, 220, 220);
+    border: 1px solid rgb(252, 183, 183);
+    border-radius: 10px;
+    width: 5rem;
+    color: black;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    height: 2rem;
+    float: right;
+}
+
+.user-msg.success {
+    background-color: lightcoral;
+}
+
+.user-msg.error {
+    background-color: rgb(247, 8, 8);
+}
