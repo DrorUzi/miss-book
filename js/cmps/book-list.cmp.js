@@ -9,7 +9,7 @@ export default {
     template: `
     <section class="book-list-container">
         <div class="book-list">
-            <router-link class="link" v-for="currBook in books" :to="'/book/'+currBook.id"                      :key="currBook.id">
+            <router-link class="book-link" v-for="currBook in books" :to="'/book/'+currBook.id"                      :key="currBook.id">
                 <book-preview :book="currBook">
                 </book-preview>
             </router-link>

@@ -54,10 +54,12 @@ h3 {
     margin: 10px;
     justify-content: center;
     transition: 0.3s all;
+    height: 33rem;
 }
 
-.link a {
-    width: 25%;
+a.book-link {
+   width: 30%;
+
 }
 
 .book-preview:hover {
@@ -71,7 +73,8 @@ h3 {
 }
 
 .book-img {
-    max-width: 80%;
+    width: 200px;
+    height: 300px;
 }
 
 /* filter */
@@ -454,4 +457,44 @@ input[type=text].input-name{
 
 .user-msg.error {
     background-color: rgb(247, 8, 8);
+}
+
+
+.pages{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+}
+
+.add-form{
+    display: flex;
+    height: 100%;
+    padding: 20px;
+    font-size: 1.7rem;
+    width: 40%;
+    flex-direction: column;
+    
+}
+.results{
+    display: flex;
+    flex-wrap: wrap;
+    height: 80vh;
+    padding: 40px;
+    width: 40%;
+    font-size: 1.2rem;
+}
+.found-book{
+    border-bottom: 1px solid lightcoral
+
+}
+.add-book{
+    padding: 40px
+}
+.add-link{
+    text-align: center;
+}
+.res-list{
+    list-style: none;
+    height: 50vh;
 }

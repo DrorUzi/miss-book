@@ -1,12 +1,16 @@
 'use strict';
 
-import longText from './long-text.cmp.js'
+import longText from '../cmps/long-text.cmp.js'
 import bookService from '../services/book-service.js'
-import showReview from './show-review.mcp.js'
+import showReview from '../cmps/show-review.mcp.js'
 
 export default {
     template: `
     <section class="book-details">
+        <div class="pages">
+           <router-link class="next-book" :to="'/book/' + nextBookId"> &lt; PREV BOOK</router-link>
+           <router-link class="next-book" :to="'/book/' + nextBookId">NEXT BOOK &gt; </router-link>
+    </div>
     <ul class="details-header" v-if="book">
             <li :class="{hidden : !isSale}"><img class="sale-icon" :src="isOnSale"></li>
             <li class="book-title">{{book.title}}</li>
@@ -26,20 +30,29 @@ export default {
             <h3 :class="{hidden : book.reviews.length !== 0}">No Reviews Yet</h3>
             <show-review :id="book.id" :idx="idx" :review="review" v-for="(review,idx) in book.reviews" :key="idx"></show-review>
             <router-link class="back-btn" :to="'/review/'+book.id" >Add a review</router-link>
-
+            <router-view></router-view>
         </ul>
+
     </section>
     `,
     data() {
         return {
             book: null,
-            isSale: false
+            isSale: false,
+            nextBookId:'',
+            prevBookId:''
         }
     },
     methods: {
-        closeModal() {
-            this.$emit('closeModal');
-        }
+        loadBook() {
+            const bookId = this.$route.params.id;
+            bookService.findBook(bookId)
+                .then(book => {
+                    this.book = book;
+                    this.nextBookId = bookService.getNextBookId(book.id,1);
+                    this.prevBookId = bookService.getNextBookId(book.id,-1);
+                }) 
+        },
     },
     computed: {
         publishedTime() {
@@ -79,10 +92,14 @@ export default {
         showReview
     },
     created(){
-        const bookId = this.$route.params.id;
-        bookService.findBook(bookId)
-            .then(book => this.book = book)
-    }
+        this.loadBook()
+    },
+    watch: {
+        '$route.params.id'() {
+            this.loadBook();
+        }
+    },
+    
 }
 
 
