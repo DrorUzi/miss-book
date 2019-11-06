@@ -7,7 +7,7 @@ export default {
         <div class="home-header">
         <h1>MISS BOOK</h1>
         <h2>Come check our books!</h2>
-        <h3>You can even leave a review</h3>
+        <h3>Add your favorite book and leave a review</h3>
         </div>
     </section>
     `,
